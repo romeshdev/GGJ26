@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ca1drd4h4h5r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tot0i"]
+radius = 12.0
+height = 176.0
+
+[node name="Invis_holder" type="Area2D" unique_id=1509813233]
+gravity_space_override = 4
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+linear_damp_space_override = 2
+linear_damp = 36.17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1103377269]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tot0i")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1183056993]
+polygon = PackedVector2Array(77, -12, 88, -2, 78, 12, -80, 12, -87, 1, -78, -12, -14, -12)

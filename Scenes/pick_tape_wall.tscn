@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://5ixh2j6wy4i4"]
+
+[ext_resource type="Texture2D" uid="uid://c73yrlorpkgpl" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame001.png" id="1_teeuq"]
+[ext_resource type="Texture2D" uid="uid://uqlggbhek113" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame002.png" id="2_cm24l"]
+[ext_resource type="Texture2D" uid="uid://c5nr4281x3e1s" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame003.png" id="3_1sne1"]
+[ext_resource type="Texture2D" uid="uid://cef41tgeqqts3" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame004.png" id="4_klfi7"]
+[ext_resource type="Texture2D" uid="uid://b8v3qhwspg4b2" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame005.png" id="5_yto08"]
+[ext_resource type="Texture2D" uid="uid://cts0u4swy1do" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame006.png" id="6_d6h0q"]
+[ext_resource type="Texture2D" uid="uid://b4v726qxgjmyv" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame007.png" id="7_yoymk"]
+[ext_resource type="Texture2D" uid="uid://gwpin1ynjhum" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame008.png" id="8_lwek2"]
+[ext_resource type="Texture2D" uid="uid://cgjlmlfl51ha7" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame009.png" id="9_qj574"]
+[ext_resource type="PackedScene" uid="uid://ca1drd4h4h5r" path="res://Scenes/invis_holder.tscn" id="10_1sne1"]
+[ext_resource type="PackedScene" uid="uid://csh04wbsqj63m" path="res://Scenes/tape.tscn" id="11_klfi7"]
+[ext_resource type="Script" uid="uid://7u5qm7o7tomj" path="res://Scenes/tape.gd" id="11_yto08"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wo84o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_teeuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cm24l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1sne1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_klfi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yto08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d6h0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yoymk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lwek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qj574")
+}],
+"loop": true,
+"name": &"shop",
+"speed": 5.0
+}]
+
+[node name="PickTapeWall" type="Node2D" unique_id=153978102]
+scale = Vector2(1.01, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=479860661]
+position = Vector2(355.5124, 636.5)
+scale = Vector2(0.6550202, 0.66302085)
+sprite_frames = SubResource("SpriteFrames_wo84o")
+animation = &"shop"
+frame = 7
+frame_progress = 0.73347497
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=684149899]
+root_node = NodePath("Tape")
+root_motion_local = true
+
+[node name="Tape" parent="AnimationPlayer2" unique_id=1200774477 instance=ExtResource("11_klfi7")]
+position = Vector2(358, 473)
+scale = Vector2(1.01, 1)
+script = ExtResource("11_yto08")
+
+[node name="Invis_holder" parent="." unique_id=1509813233 instance=ExtResource("10_1sne1")]
+position = Vector2(356.43564, 619)
