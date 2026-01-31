@@ -21,6 +21,23 @@ animations = [{
 "texture": ExtResource("4_wo3qc")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_otf3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ngbls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_77txa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wo3qc")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dcyk4tpimngd6"]
+
+[ext_resource type="Script" uid="uid://dyu5wkrwyfsh0" path="res://Scenes/bunno_start.gd" id="1_0y0um"]
+[ext_resource type="Texture2D" uid="uid://dcminp64linqv" path="res://Content/Art/SpriteSheets/bunno.png" id="1_qk8iv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiftd"]
+size = Vector2(130.00003, 90.49997)
+
+[node name="Bunnings" type="Area2D" unique_id=1521993651]
+script = ExtResource("1_0y0um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2097590014]
+position = Vector2(466, 505)
+shape = SubResource("RectangleShape2D_uiftd")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1407656404]
+color = Color(0.10989999, 0.21, 0.0735, 1)
+polygon = PackedVector2Array(-16, 502, 795, 502, 756, 1321, -70, 1304)
+
+[node name="Bunno" type="Sprite2D" parent="." unique_id=10523535]
+position = Vector2(427, 428)
+scale = Vector2(0.7137643, 0.7137643)
+texture = ExtResource("1_qk8iv")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

@@ -46,3 +46,7 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+
+func _on_node_2d_door_hit() -> void:
+	pass # Replace with function body.
