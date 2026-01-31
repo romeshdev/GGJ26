@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://duuw3wspysy3i"]
+
+[ext_resource type="Script" uid="uid://rf544nq8lp8t" path="res://wall.gd" id="1_yjehn"]
+[ext_resource type="Texture2D" uid="uid://gtpqku4s34o6" path="res://Content/Art/SpriteSheets/wall.png" id="2_m8ojb"]
+[ext_resource type="Texture2D" uid="uid://do8ffbw6vhqw1" path="res://Content/Art/paintWall_03.png" id="3_m8ojb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dv0i"]
+
+[node name="Wall" type="Node2D" unique_id=836286222]
+script = ExtResource("1_yjehn")
+
+[node name="BaseWall" type="Sprite2D" parent="." unique_id=310148074]
+position = Vector2(360, 640.00006)
+rotation = -3.1415925
+scale = Vector2(0.64285713, 0.6666667)
+texture = ExtResource("2_m8ojb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=534239384]
+
+[node name="Paint" type="Sprite2D" parent="CanvasLayer" unique_id=731093908]
+material = SubResource("ShaderMaterial_0dv0i")
+position = Vector2(360, 640.00006)
+scale = Vector2(0.64285713, 0.6666667)
+texture = ExtResource("3_m8ojb")

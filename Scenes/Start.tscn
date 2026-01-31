@@ -3,10 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://ekglkllhuf7w" path="res://Content/Art/MenuBackground.png" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://c1naw62rn1sj2" path="res://Scripts/Start.gd" id="1_y4ycm"]
 [ext_resource type="FontFile" uid="uid://blmm5cbetxh8d" path="res://Content/Fonts/Caveat_VariableFont.ttf" id="2_nt0jr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4ycm"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1lxxj"]
+[ext_resource type="PackedScene" uid="uid://dcyk4tpimngd6" path="res://Scenes/Bunno_start.tscn" id="3_37b1d"]
+[ext_resource type="PackedScene" uid="uid://dwqk0ah3vl0dm" path="res://Scenes/crab.tscn" id="4_1lxxj"]
+[ext_resource type="AudioStream" uid="uid://cq1ajltv33ked" path="res://Content/Audio/backroundMusic.wav" id="6_lmkek"]
 
 [node name="Start" type="Control" unique_id=2003963145]
 layout_mode = 3
@@ -23,6 +22,11 @@ offset_right = 720.0
 offset_bottom = 1280.0
 texture = ExtResource("1_tt5f1")
 
+[node name="Bunnings" parent="." unique_id=1521993651 instance=ExtResource("3_37b1d")]
+
+[node name="Crab" parent="." unique_id=1166987651 instance=ExtResource("4_1lxxj")]
+position = Vector2(363, 1142)
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1622415407]
 layout_mode = 0
 offset_right = 720.0
@@ -31,6 +35,7 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
+metadata/_edit_lock_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=351501320]
 layout_mode = 2
@@ -39,33 +44,10 @@ theme_override_fonts/normal_font = ExtResource("2_nt0jr")
 theme_override_font_sizes/normal_font_size = 150
 text = "Not Crab Game"
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=733796907]
-layout_mode = 2
-theme_override_constants/separation = 18
-alignment = 1
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=597719117]
+stream = ExtResource("6_lmkek")
+autoplay = true
 
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=603478894]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nt0jr")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxEmpty_y4ycm")
-text = "Play"
-
-[node name="RopeTestButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2050835773]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nt0jr")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxEmpty_y4ycm")
-text = "RopeTest"
-
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1121336460]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_nt0jr")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1lxxj")
-text = "Quit"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/RopeTestButton" to="." method="_on_rope_test_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="doorHit" from="Bunnings" to="." method="_on_bunnings_door_hit"]
