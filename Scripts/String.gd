@@ -56,15 +56,15 @@ func _unhandled_input(event:InputEvent)->void:
 
 func _process(delta)->void:
 
+	set_last(pathFollow2D.global_position)
 	update_points(delta)
 	update_constrain()
-	set_last(pathFollow2D.global_position)
 
 	var mouse_pos = get_global_mouse_position()
 	var max_dist = ropeLength * ropeLengthClamp
 	var mouse_dist = pathFollow2D.global_position.distance_to(mouse_pos)
 
-	if mouse_dist >= max_dist:
+	if mouse_dist >= max_dist && Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		pathFollow2D.progress_ratio += tapePullSpeed * delta
 		# pos.insert(0, pathFollow2D.global_position + Vector2(0,0))
 		# posPrev.insert(0, pathFollow2D.global_position + Vector2(0,0))

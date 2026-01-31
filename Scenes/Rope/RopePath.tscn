@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://wr8rf4pk244y"]
+
+[ext_resource type="Script" uid="uid://c71chloo5i1e0" path="res://Scripts/RopeTest.gd" id="1_q4jbc"]
+[ext_resource type="Script" uid="uid://dy5mekvp30vek" path="res://Scenes/character_body_2d.gd" id="2_uoac7"]
+[ext_resource type="Script" uid="uid://d4nhuhk4ee5jk" path="res://Scenes/Rope/draggable_character_2d.gd" id="3_uoac7"]
+[ext_resource type="Texture2D" uid="uid://44nl033d6shy" path="res://Content/Art/SpriteSheets/crab_01/Frame001.png" id="4_e8mnx"]
+[ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="5_abvsw"]
+[ext_resource type="Script" uid="uid://dvxegqp0cf77n" path="res://addons/ropesim/RopeInteraction.gd" id="6_jkfe2"]
+
+[sub_resource type="Curve2D" id="Curve2D_n13ob"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 72, 36, -26.28572, -261.8269, 26.28572, 261.8269, 264, 433.3289, -168.08386, -282.7863, 168.08386, 282.7863, 502, 991.19464)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahwgw"]
+size = Vector2(2.2820969, 4.2528687)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4alxn"]
+size = Vector2(122.46182, 83.17385)
+
+[node name="RopePath" type="Path2D" unique_id=1469218999 node_paths=PackedStringArray("drag_subject")]
+curve = SubResource("Curve2D_n13ob")
+script = ExtResource("1_q4jbc")
+drag_subject = NodePath("PathFollow2D")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1695692892]
+position = Vector2(72.60894, 36.51367)
+rotation = 0.39269316
+scale = Vector2(0.8323901, 0.74529)
+skew = 0.6380271
+progress = 0.9987793
+rotates = false
+loop = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="PathFollow2D" unique_id=127134568]
+script = ExtResource("2_uoac7")
+speed = 150.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/CharacterBody2D" unique_id=1747447513]
+position = Vector2(-0.02760315, -0.64499664)
+shape = SubResource("RectangleShape2D_ahwgw")
+disabled = true
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1434322504]
+position = Vector2(73, 38)
+points = PackedVector2Array(1.1920929e-07, -2)
+width = 3.0
+
+[node name="Draggable" type="CharacterBody2D" parent="." unique_id=1369611914]
+position = Vector2(76, 233)
+script = ExtResource("3_uoac7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Draggable" unique_id=868247243]
+position = Vector2(-1, 0.9999981)
+scale = Vector2(0.051834933, 0.053437512)
+texture = ExtResource("4_e8mnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable" unique_id=1322316825]
+position = Vector2(0, 1)
+scale = Vector2(0.29396927, 0.45687494)
+shape = SubResource("RectangleShape2D_4alxn")
+
+[node name="Rope" type="Node2D" parent="." unique_id=799551974]
+position = Vector2(75, 36)
+script = ExtResource("5_abvsw")
+rope_length = 200.0
+fixate_begin = false
+max_endpoint_distance = 260.0
+resolve_to_begin = true
+resolve_to_end = true
+num_constraint_iterations = 20
+line_width = 6.0
+color = Color(0.20945153, 0.3917563, 0.79404694, 1)
+
+[node name="RopeInteractionBegin" type="Node" parent="Rope" unique_id=1765381786 node_paths=PackedStringArray("target_node", "rope")]
+script = ExtResource("6_jkfe2")
+position_update_mode = 1
+target_node = NodePath("")
+rope = NodePath("..")
+
+[node name="RopeInteractionEnd" type="Node" parent="Rope" unique_id=337433018 node_paths=PackedStringArray("constraint_path", "trail", "target_node", "rope")]
+script = ExtResource("6_jkfe2")
+constraint_path = NodePath("../..")
+trail = NodePath("../../Line2D")
+position_update_mode = 1
+target_node = NodePath("../../PathFollow2D/CharacterBody2D")
+rope = NodePath("..")
+rope_position = 0.0
+strength = 1.0
+
+[connection signal="input_event" from="Draggable" to="Draggable" method="_on_draggable_input_event"]
