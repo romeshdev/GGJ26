@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dwqk0ah3vl0dm"]
+
+[ext_resource type="SpriteFrames" uid="uid://jk5ltibr3l46" path="res://Content/Art/Frames/crab_01_frames.tres" id="1_rxqea"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_384rs"]
+radius = 45.0
+height = 116.0
+
+[node name="Crab" type="Area2D" unique_id=1166987651]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1702844091]
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("1_rxqea")
+animation = &"Idle"
+frame_progress = 0.71257395
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=548351542]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_384rs")

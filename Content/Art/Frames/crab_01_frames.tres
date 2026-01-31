@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://jk5ltibr3l46"]
+
+[ext_resource type="Texture2D" uid="uid://44nl033d6shy" path="res://Content/Art/SpriteSheets/crab_01/Frame001.png" id="1_otf3a"]
+[ext_resource type="Texture2D" uid="uid://4us6rorrdb26" path="res://Content/Art/SpriteSheets/crab_01/Frame002.png" id="2_ngbls"]
+[ext_resource type="Texture2D" uid="uid://i68km44kge4" path="res://Content/Art/SpriteSheets/crab_01/Frame003.png" id="3_77txa"]
+[ext_resource type="Texture2D" uid="uid://c07k3ob5b8d5f" path="res://Content/Art/SpriteSheets/crab_01/Frame004.png" id="4_wo3qc"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_otf3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ngbls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_77txa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wo3qc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
