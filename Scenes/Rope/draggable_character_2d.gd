@@ -1,16 +1,13 @@
 extends CharacterBody2D
 
-@export var use_arrow_keys: bool = false
-@export var speed: float = 300.0
+# @export var use_arrow_keys: bool = false
+# @export var speed: float = 300.0
 
-@export var drag_subject: PathFollow2D
+# @export var drag_subject: PathFollow2D
 var is_dragging = false
 var offset = Vector2.ZERO
 
-func _ready() -> void:
-	NativeRopeServer.on_pre_pre_update.connect(_update)
-
-func _update():
+func _process(_delta):
 	if is_dragging:
 		global_position = get_global_mouse_position() + offset
 
