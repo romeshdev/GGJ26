@@ -52,6 +52,13 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxEmpty_y4ycm")
 text = "Play"
 
+[node name="RopeTestButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2050835773]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nt0jr")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y4ycm")
+text = "RopeTest"
+
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1121336460]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nt0jr")
@@ -60,4 +67,5 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_1lxxj")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RopeTestButton" to="." method="_on_rope_test_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
