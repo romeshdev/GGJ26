@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://ca4j57ohbw1ju"]
+[gd_scene format=3 uid="uid://bslfr5j33ol0i"]
+
+[ext_resource type="PackedScene" uid="uid://drqjkuho7smeb" path="res://Scenes/claw.tscn" id="1_gl6un"]
+[ext_resource type="PackedScene" uid="uid://dwqk0ah3vl0dm" path="res://Scenes/crab.tscn" id="2_j5yw3"]
 
 [node name="Node2D" type="Node2D" unique_id=2067413308]
+
+[node name="claw" parent="." unique_id=1690842599 instance=ExtResource("1_gl6un")]
+position = Vector2(433, 228)
+
+[node name="Crab" parent="." unique_id=1166987651 instance=ExtResource("2_j5yw3")]
+position = Vector2(294, 409)
