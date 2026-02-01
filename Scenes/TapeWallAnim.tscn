@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://du1kt6jkt0618"]
+
+[ext_resource type="Script" uid="uid://ddquf3aiav2pn" path="res://Scripts/tape_wall_anim.gd" id="1_w7utl"]
+[ext_resource type="Texture2D" uid="uid://c73yrlorpkgpl" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame001.png" id="1_w8png"]
+[ext_resource type="Texture2D" uid="uid://uqlggbhek113" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame002.png" id="2_w7utl"]
+[ext_resource type="Texture2D" uid="uid://c5nr4281x3e1s" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame003.png" id="3_ykwfx"]
+[ext_resource type="Texture2D" uid="uid://cef41tgeqqts3" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame004.png" id="4_nn1uc"]
+[ext_resource type="Texture2D" uid="uid://b8v3qhwspg4b2" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame005.png" id="5_wwl53"]
+[ext_resource type="Texture2D" uid="uid://cts0u4swy1do" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame006.png" id="6_y5txl"]
+[ext_resource type="Texture2D" uid="uid://b4v726qxgjmyv" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame007.png" id="7_pa621"]
+[ext_resource type="Texture2D" uid="uid://gwpin1ynjhum" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame008.png" id="8_h36f8"]
+[ext_resource type="Texture2D" uid="uid://cgjlmlfl51ha7" path="res://Content/Art/SpriteSheets/Shop_Interior/Frame009.png" id="9_xjq46"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrfu6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w8png")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w7utl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ykwfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nn1uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wwl53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y5txl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pa621")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h36f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xjq46")
+}],
+"loop": true,
+"name": &"shop",
+"speed": 5.0
+}]
+
+[node name="TapeWallAnim" type="Node2D" unique_id=1128932965]
+script = ExtResource("1_w7utl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=614510363]
+position = Vector2(355.5124, 636.5)
+scale = Vector2(0.692, 0.7)
+sprite_frames = SubResource("SpriteFrames_wrfu6")
+animation = &"shop"

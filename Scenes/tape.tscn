@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://csh04wbsqj63m"]
 
+[ext_resource type="Script" uid="uid://7u5qm7o7tomj" path="res://Scripts/tape.gd" id="1_c6f2p"]
 [ext_resource type="Texture2D" uid="uid://fcxh34f6re2s" path="res://Content/Art/SpriteSheets/Crab_Tape/Frame001.png" id="1_t1t16"]
 [ext_resource type="Texture2D" uid="uid://dj7tuimhpgodu" path="res://Content/Art/SpriteSheets/Crab_Tape/Frame002.png" id="2_c6f2p"]
 [ext_resource type="Texture2D" uid="uid://b0cp7kl0q4oc6" path="res://Content/Art/SpriteSheets/Crab_Tape/Frame003.png" id="3_f0btc"]
@@ -57,13 +58,15 @@ animations = [{
 }]
 
 [node name="Tape" type="RigidBody2D" unique_id=1200774477]
+script = ExtResource("1_c6f2p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010947546]
 position = Vector2(-3, 4.5)
 shape = SubResource("RectangleShape2D_3jpvu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=790387591]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_shlp3")
 animation = &"tapetape"
-frame_progress = 0.6355346
+frame = 1
+frame_progress = 0.46781635
