@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://co2kxqup2me6c" path="res://Scripts/pick_tape_wall.gd" id="1_f3bef"]
 [ext_resource type="PackedScene" uid="uid://du1kt6jkt0618" path="res://Scenes/TapeWallAnim.tscn" id="4_e02vd"]
+[ext_resource type="PackedScene" uid="uid://drqjkuho7smeb" path="res://Scenes/claw.tscn" id="5_vfll2"]
+[ext_resource type="Script" uid="uid://0ocqvd26hjsx" path="res://Scripts/claw.gd" id="6_0sx6n"]
 [ext_resource type="PackedScene" uid="uid://ca1drd4h4h5r" path="res://Scenes/invis_holder.tscn" id="10_1sne1"]
 [ext_resource type="PackedScene" uid="uid://csh04wbsqj63m" path="res://Scenes/tape.tscn" id="11_klfi7"]
 
@@ -12,6 +14,7 @@ script = ExtResource("1_f3bef")
 [node name="TapeWallAnim" parent="." unique_id=1321453438 instance=ExtResource("4_e02vd")]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1858236042]
+z_index = 2
 
 [node name="Tape" parent="Node2D" unique_id=1200774477 instance=ExtResource("11_klfi7")]
 z_index = 1
@@ -22,6 +25,7 @@ z_index = 1
 position = Vector2(151.48515, 496)
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=589504022]
+z_index = 2
 position = Vector2(192.07921, 197)
 
 [node name="Tape" parent="Node2D2" unique_id=1769737401 instance=ExtResource("11_klfi7")]
@@ -33,6 +37,7 @@ z_index = 1
 position = Vector2(151.48515, 496)
 
 [node name="Node2D3" type="Node2D" parent="." unique_id=1847935338]
+z_index = 2
 position = Vector2(385.1485, 3)
 
 [node name="Tape" parent="Node2D3" unique_id=1372039913 instance=ExtResource("11_klfi7")]
@@ -42,3 +47,9 @@ position = Vector2(151.48515, 366)
 [node name="Invis_holder" parent="Node2D3" unique_id=1125324948 instance=ExtResource("10_1sne1")]
 z_index = 1
 position = Vector2(151.48515, 496)
+
+[node name="claw" parent="." unique_id=1690842599 instance=ExtResource("5_vfll2")]
+z_index = 1
+position = Vector2(463.36636, 609.00006)
+rotation = 1.2130039
+script = ExtResource("6_0sx6n")

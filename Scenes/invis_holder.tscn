@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ca1drd4h4h5r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tot0i"]
-radius = 12.0
-height = 128.0
+radius = 4.0
+height = 48.0
 
 [node name="Invis_holder" type="Area2D" unique_id=1509813233]
 gravity_space_override = 4

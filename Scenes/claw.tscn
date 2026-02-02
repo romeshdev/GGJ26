@@ -6,8 +6,7 @@
 radius = 102.0
 height = 204.0
 
-[node name="claw" type="Area2D" unique_id=1690842599]
-metadata/_edit_lock_ = true
+[node name="claw" type="RigidBody2D" unique_id=1915102113]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=482661796]
 position = Vector2(111, -56)
